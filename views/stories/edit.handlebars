@@ -20,7 +20,7 @@
             <div class="col s12">
                 <p>
                     <label>
-                        <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" checked="checked" />
+                        <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" {{#if story.allowComments}}checked="checked"{{/if}}/>
                         <span>Allow Comments</span>
                     </label>
                 </p>

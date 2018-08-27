@@ -108,7 +108,7 @@ router.put('/:id', (req, res) => {
        allowComments: allowComments,
        status: req.body.status,
    }}).then((story) => {
-       res.redirect(`/stories`);
+       res.redirect(`/`);
    })
 });
 
