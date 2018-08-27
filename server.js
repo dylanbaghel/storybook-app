@@ -1,15 +1,25 @@
 require('./config/config');
+
 //THIRD PARTY MODULES
 const express = require('express');
 const app = express();
+const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+
+
 //CUSTOM MODULE FILES
 const { mongoose } = require('./db/mongoose');
 const auth = require('./routes/auth');
 require('./config/passport').passportGoogle(passport);
+
+
 //MIDDLEWARES
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({
@@ -29,7 +39,12 @@ app.use((req, res, next) => {
 //ROUTES
 //GET - / - lANDING PAGE ROUTE
 app.get('/', (req, res) => {
-    res.send('It Works');
+    res.render('index');
+});
+
+//GET - /dashboard - DASHBOARD PAGE ROUTE
+app.get('/dashboard', (req, res) => {
+    res.send('Dashboard');
 });
 
 
