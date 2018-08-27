@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .capital {
+    text-transform: capitalize;
+  }
+
+  footer {
+    margin-top: 70px;
+  }
+
+  .dash-btn {
+    font-size: 0px;
+  }
+
+  #delete-form {
+    display: inline;
+  }
+
+  @media(max-width: 768px) {
+    .dash-btn {
+      margin-top: 5px;
+    }
+  }
